@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 function Formulario({ onSubmit }) {
-    const [Musica1, setMusica1] = useState('');
+    const [Nombre, setNombre] = useState('');
     const [Musica2, setMusica2] = useState('');
     const [error, setError] = useState(false);
 
@@ -9,8 +9,8 @@ function Formulario({ onSubmit }) {
         e.preventDefault();
 
 
-    if (Musica1.trim().length >= 3 && Musica2.trim().length >= 6) {
-        onSubmit(Musica1, Musica2);
+    if (Nombre.trim().length >= 3 && Musica2.trim().length >= 6) {
+        onSubmit(Nombre, Musica2);
         setError(false);
     } else {
         setError(true);
@@ -21,15 +21,15 @@ function Formulario({ onSubmit }) {
     <div>
         <form onSubmit={handleSubmit}>
         <div>
-            <label>Musica 1: </label>
+            <label>Mi nombre es: </label>
                 <input
                 type="text"
-                value={Musica1}
-                onChange={(e) => setMusica1(e.target.value)}
+                value={Nombre}
+                onChange={(e) => setNombre(e.target.value)}
             />
         </div>
         <div>
-            <label>Musica 2: </label>
+            <label>¿Que musica te gusta? : </label>
             <input
                 type="text"
                 value={Musica2}

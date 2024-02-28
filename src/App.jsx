@@ -7,8 +7,8 @@ function App() {
   const [showCard, setShowCard] = useState(false);
   const [cardInfo, setCardInfo] = useState({});
 
-  const handleFormSubmit = (Musica1, Musica2) => {
-    setCardInfo({ Musica1, Musica2 });
+  const handleFormSubmit = (Nombre, Musica2) => {
+    setCardInfo({ Nombre, Musica2 });
     setShowCard(true);
   };
 
@@ -16,7 +16,7 @@ function App() {
     <div className="App">
       <h1> Elige un tema de música </h1>
       <Formulario onSubmit={handleFormSubmit} />
-      {showCard && <Card Musica1={cardInfo.Musica1} Musica2={cardInfo.Musica2} />}
+      {showCard && <Card Nombre={cardInfo.Nombre} Musica2={cardInfo.Musica2} />}
     </div>
   );
 }
